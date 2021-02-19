@@ -1,6 +1,6 @@
 # jupyter-drawing-pad
 
-I forked it to make the pad square-shaped.
+_**I forked it to make the pad square-shaped.**_
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/PierreMarion23/jupyter-widget-drawing-pad-binder/master)
 
