@@ -5,16 +5,16 @@ var create = function (that) {
 	var ctx = that.ctx;
 	window.ctx = ctx;
 	window.canvas = canvas;
-	 
+
 	var sketch = that.sketch;
 	var sketch_style = getComputedStyle(sketch);
-	canvas.width = 500;
-	canvas.height = 250;
-	
+	canvas.width = 100;
+	canvas.height = 100;
+
 	var mouse = {x: 0, y: 0, t:0};
 	window.that = that;
 
-	
+
 	/* Mouse Capturing Work */
 	canvas.addEventListener('mousemove', function(e) {
 		var rect = canvas.getBoundingClientRect();
@@ -22,18 +22,19 @@ var create = function (that) {
 		mouse.y = e.clientY - rect.top;
 		mouse.t = e.timeStamp;
 	  }, false);
-	
+
 	/* Drawing on Paint App */
 	ctx.lineJoin = 'round';
 	ctx.lineCap = 'round';
 	ctx.lineWidth = 1;
-	
-	ctx.strokeStyle = "red";
+
+	ctx.strokeStyle = "white";
+  ctx.lineWidth = "10";
 	function getColor(colour){ctx.strokeStyle = colour;}
-	
+
 	function getSize(size){ctx.lineWidth = size;}
-	
-	//ctx.strokeStyle = 
+
+	//ctx.strokeStyle =
 	//ctx.strokeStyle = document.settings.colour[1].value;
 
 	// Load lists
@@ -44,7 +45,7 @@ var create = function (that) {
 	window.x = x;
 	window.y = y;
 	window.t = t;
-	
+
 	canvas.addEventListener('mousedown', function(e) {
 		ctx.beginPath();
 		ctx.moveTo(mouse.x, mouse.y);
@@ -54,7 +55,7 @@ var create = function (that) {
 		t = data[2].slice();
 		canvas.addEventListener('mousemove', onPaint, false);
 	}, false);
-	 
+
 	canvas.addEventListener('mouseup', function() {
 		canvas.removeEventListener('mousemove', onPaint, false);
 		// Set new lists in widget model
@@ -63,7 +64,7 @@ var create = function (that) {
 		that.model.save_changes();
 		console.log("Save changes")
 	}, false);
-	 
+
 	var onPaint = function() {
 		console.log("Painting");
 		ctx.lineTo(mouse.x, mouse.y);
