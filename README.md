@@ -2,7 +2,7 @@
 
 _**I forked it to make the pad square-shaped.**_
 
-## Installation (tested on MacOS)
+## Installation
 
 To install, run:
 ```bash
