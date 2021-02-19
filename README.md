@@ -8,6 +8,10 @@ To install, run:
 ```bash
 pip install git+https://github.com/mareksubocz/jupyter-drawing-pad.git#egg=jupyter-drawing-pad
 ```
+or clone this repo, cd into it and run:
+```bash
+pip install .
+```
 
 ## 1 - Overview
 
