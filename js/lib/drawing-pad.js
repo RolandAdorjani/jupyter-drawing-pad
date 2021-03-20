@@ -9,7 +9,7 @@ var create = function (that) {
 	var sketch = that.sketch;
 	var sketch_style = getComputedStyle(sketch);
 	canvas.width = 500;
-	canvas.height = 350;
+	canvas.height = 250;
 
 	var mouse = {x: 0, y: 0, t:0};
 	window.that = that;
