@@ -7,14 +7,9 @@ import numpy as np
 class CustomBox(HBox):
     def __init__(self):
         drawing_pad = DrawingPad()
-        button = Button(description="Clear", tooltip="Click me")
-        save_button = Button(description="Save", tooltip="Click me")
-        login_button = Button(description="Login", tooltip="Click me")
+   
         text_area = Text(value='', placeholder='Type your name', description='Name:', disabled=False)
-        button.on_click(lambda b : self.clean())
-        save_button.on_click(lambda b : self.set_saved())
-        login_button.on_click(lambda b : self.check())
-        buttons = VBox([text_area, button, save_button, login_button])
+        buttons = VBox([text_area])
         self.drawing_pad = drawing_pad
         self.text_area = text_area
         self.__saved = {}
